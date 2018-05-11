@@ -3,8 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
-};
+  production: false,
+  firebase: {
+    apiKey: "AIzaSyBvYa80AdA6t4bWOdzwS6CT8C4x5XSSKjc",
+    authDomain: "crelbinchat.firebaseapp.com",
+    databaseURL: "https://crelbinchat.firebaseio.com",
+    projectId: "crelbinchat",
+    storageBucket: "crelbinchat.appspot.com",
+    messagingSenderId: "672807797348"
+  }
+}
 
 /*
  * In development mode, to ignore zone related error stack frames such as
