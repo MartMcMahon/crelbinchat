@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core'
 })
 export class SendMsgFormComponent implements OnInit {
 
-  name: string = 'crelbin'
+  sender: string = 'crelbin'
   msg: string = 'message'
 
   constructor() { }
