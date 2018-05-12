@@ -1,0 +1,11 @@
+<ul>
+  <div *ngFor="let msg of messagesObservable | async">
+    <ngb-alert type="info" [dismissible]="false">
+      <h3><a href="#">{{msg}}</a> </h3>
+      <p>{{msg.body}}</p>
+      <div>
+        <a href="{{msg.url}}" target="_blank" class="btn btn-danger">Go To Course</a>
+      </div>
+    </ngb-alert> 
+  </div>
+</ul>
