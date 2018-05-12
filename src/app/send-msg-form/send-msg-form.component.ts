@@ -9,7 +9,7 @@ import { MessageService } from '../shared/message.service'
 export class SendMsgFormComponent implements OnInit {
 
   sender: string = 'crelbin'
-  @Input() body: string = 'message'
+  body: string = 'message'
   message = {
     "sender": this.sender,
     "body": this.body,
@@ -27,6 +27,8 @@ export class SendMsgFormComponent implements OnInit {
       "timeStamp": new Date()
     }
     this.msgSrv.createMessage(this.message)
+
+    this.body = ''
   }
   
 }
