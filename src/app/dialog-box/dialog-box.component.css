@@ -1,0 +1,6 @@
+.dialog-box {
+	background-color: lightgray;
+	display: block;
+	height: 30%;
+	overflow: scroll;
+}
