@@ -8,11 +8,15 @@ import { AngularFireModule } from 'angularfire2'
 import { AngularFireAuthModule } from 'angularfire2/auth'
 import { AngularFireDatabaseModule } from 'angularfire2/database'
 
+//material imports
+import { MatButtonModule } from '@angular/material'
+import { MatInputModule } from '@angular/material/input'
+
 //app imports
 import { environment } from '../environments/environment'
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { DialogBoxComponent } from './dialog-box/dialog-box.component';
+import { NavbarComponent } from './navbar/navbar.component'
+import { DialogBoxComponent } from './dialog-box/dialog-box.component'
 import { SendMsgFormComponent } from './send-msg-form/send-msg-form.component'
 
 @NgModule({
@@ -27,7 +31,9 @@ import { SendMsgFormComponent } from './send-msg-form/send-msg-form.component'
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    MatButtonModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
