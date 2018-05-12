@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import { MessageService } from '../shared/message.service'
 
 @Component({
   selector: 'app-send-msg-form',
@@ -8,11 +9,20 @@ import { Component, OnInit } from '@angular/core'
 export class SendMsgFormComponent implements OnInit {
 
   sender: string = 'crelbin'
-  msg: string = 'message'
+  body: string = 'message'
+  message = {
+    "sender": this.sender,
+    "body": this.body,
+    "timeStamp": new Date()
+  }
 
-  constructor() { }
+  constructor(private msgSrv: MessageService) { }
 
   ngOnInit() {
   }
 
+  onSend() {
+    this.msgSrv.createMessage(this.message)
+  }
+  
 }

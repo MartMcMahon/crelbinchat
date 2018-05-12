@@ -3,8 +3,9 @@
     <input type="text" class="form-control" placeholder="{{sender}}" />
   </span>
   <textarea class="form-control" placeholder="{{msg}}"></textarea>
-  <span style="width:75%; align: center">
-    <button mat-raised-button>send</button>
-  </span>
+  <div>
+    <span style="width:75%; align: center">
+      <button mat-raised-button (click)="onSend()">send</button>
+    </span>
+  </div>
 </div>
-

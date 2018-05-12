@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core'
-import { AngularFireDatabase } from 'angularfire2/database'
+import { Component, OnInit, Input } from '@angular/core'
+import { AngularFireList } from 'angularfire2/database'
+import { Message } from '../shared/message.model'
+import { MessageService } from '../shared/message.service'
 import { Observable } from 'rxjs'
 
 @Component({
@@ -9,15 +11,12 @@ import { Observable } from 'rxjs'
 })
 export class DialogBoxComponent implements OnInit {
 
-  messagesObservable: Observable<any[]>
-  constructor(private db: AngularFireDatabase) { }
+  messagesObservable: Observable<{}[]>
+
+  constructor(private msgSrv: MessageService) { }
 
   ngOnInit() {
-    this.messagesObservable = this.getMessages('/dialog/messages')
+    // this.messagesObservable = this.getMessages('/dialog/messages')
+    this.messagesObservable = this.msgSrv.getMessageList()
   }
-
-  getMessages(path): Observable<any[]> {
-    return this.db.list(path).valueChanges()
-  }
-
 }

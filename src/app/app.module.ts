@@ -6,7 +6,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 //firebase imports
 import { AngularFireModule } from 'angularfire2'
 import { AngularFireAuthModule } from 'angularfire2/auth'
-import { AngularFireDatabaseModule } from 'angularfire2/database'
+import { AngularFireDatabaseModule, AngularFireList, AngularFireObject } from 'angularfire2/database'
 
 //material imports
 import { MatButtonModule } from '@angular/material'
@@ -18,6 +18,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component'
 import { DialogBoxComponent } from './dialog-box/dialog-box.component'
 import { SendMsgFormComponent } from './send-msg-form/send-msg-form.component'
+import { MessageService } from './shared/message.service'
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { SendMsgFormComponent } from './send-msg-form/send-msg-form.component'
     MatButtonModule,
     MatInputModule
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
