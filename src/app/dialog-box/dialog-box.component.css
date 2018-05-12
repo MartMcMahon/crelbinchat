@@ -1,6 +1,8 @@
 .dialog-box {
 	background-color: lightgray;
 	display: block;
-	height: 30%;
-	overflow: scroll;
+	height: auto;
+	max-height: 420px;
+	min-height: 150px;
+	overflow-y: scroll;
 }
