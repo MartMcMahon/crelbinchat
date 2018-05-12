@@ -1,8 +1,11 @@
 <div class="send-msg-container">
   <span style="width:20%">
-    <input type="text" class="form-control" placeholder="{{sender}}" />
+    <input type="text" class="form-control" placeholder="{{sender}}" 
+    [(ngModel)]="sender" />
   </span>
-  <textarea class="form-control" placeholder="{{msg}}"></textarea>
+  
+  <textarea class="form-control" placeholder="{{body}}" 
+  [(ngModel)]="body" ></textarea>
   <div>
     <span style="width:75%; align: center">
       <button mat-raised-button (click)="onSend()">send</button>

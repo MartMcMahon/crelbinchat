@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, Input } from '@angular/core'
 import { MessageService } from '../shared/message.service'
 
 @Component({
@@ -9,7 +9,7 @@ import { MessageService } from '../shared/message.service'
 export class SendMsgFormComponent implements OnInit {
 
   sender: string = 'crelbin'
-  body: string = 'message'
+  @Input() body: string = 'message'
   message = {
     "sender": this.sender,
     "body": this.body,
@@ -18,10 +18,14 @@ export class SendMsgFormComponent implements OnInit {
 
   constructor(private msgSrv: MessageService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   onSend() {
+    this.message = {
+      "sender": this.sender,
+      "body": this.body,
+      "timeStamp": new Date()
+    }
     this.msgSrv.createMessage(this.message)
   }
   
