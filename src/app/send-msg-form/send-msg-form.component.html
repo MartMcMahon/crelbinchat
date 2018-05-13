@@ -1,12 +1,20 @@
 <div class="send-msg-container">
   <form (ngSubmit)="onSend()">
     <span style="width:20%">
-      <input type="text" class="form-control" placeholder="{{sender}}" 
-      [(ngModel)]="sender" />
+      <input 
+        type="text" 
+        class="form-control" 
+        placeholder="{{sender}}" 
+        [(ngModel)]="sender" 
+        name="sender" />
     </span>
     
-    <textarea class="form-control" placeholder="{{body}}" 
-    [(ngModel)]="body" ></textarea>
+    <textarea 
+      class="form-control" 
+      placeholder="{{body}}" 
+      [(ngModel)]="body"
+      name="body" >
+    </textarea>
     <div>
       <span style="width:75%; align: center">
         <button mat-raised-button type="submit">send</button>

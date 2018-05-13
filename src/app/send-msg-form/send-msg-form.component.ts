@@ -27,8 +27,13 @@ export class SendMsgFormComponent implements OnInit {
       "timeStamp": new Date()
     }
     this.msgSrv.createMessage(this.message)
+    .then(() => {
+      this.body = ''
+    })
 
-    this.body = ''
+
+
+    // this.body = ''
   }
   
 }
