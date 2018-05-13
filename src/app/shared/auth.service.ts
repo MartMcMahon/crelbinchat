@@ -38,6 +38,10 @@ export class AuthService {
     return this.usersRef.valueChanges()
   }
 
+  updateName(name: string) {
+    this.db.object(this.usersPath + this.userId).update(name)
+  }
+
 
   // signOff(userId: string) {
   //   this.usersRef.update({})

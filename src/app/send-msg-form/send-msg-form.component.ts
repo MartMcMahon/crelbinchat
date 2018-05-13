@@ -31,5 +31,10 @@ export class SendMsgFormComponent implements OnInit {
     }
     this.msgSrv.createMessage(this.message)
   }
+
+  onNameChange(e) {
+    console.log('function firing')
+    this.authSrv.updateName(this.sender)
+  }
   
 }
