@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
+import { AngularFireList } from 'angularfire2/database'
+import { Observable } from 'rxjs'
+import { AuthService } from '../shared/auth.service'
+
 
 @Component({
   selector: 'app-users',
@@ -6,10 +10,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
+  
+  usersObservable: Observable<{}[]>
 
-  constructor() { }
+  constructor(private authSrv: AuthService) { }
 
   ngOnInit() {
+    this.usersObservable = this.authSrv.getUserList()
   }
-
 }

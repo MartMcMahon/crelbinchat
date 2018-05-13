@@ -34,6 +34,11 @@ export class AuthService {
     console.log(this.userId)
   }
 
+  getUserList(): Observable<{}[]> {
+    return this.usersRef.valueChanges()
+  }
+
+
   // signOff(userId: string) {
   //   this.usersRef.update({})
   //   var removeCapital = cityRef.update({
