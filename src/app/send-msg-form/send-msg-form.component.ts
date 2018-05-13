@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core'
+import { AuthService } from '../shared/auth.service'
 import { MessageService } from '../shared/message.service'
 
 @Component({
@@ -16,9 +17,11 @@ export class SendMsgFormComponent implements OnInit {
     "timeStamp": new Date()
   }
 
-  constructor(private msgSrv: MessageService) { }
+  constructor(private authSrv: AuthService, private msgSrv: MessageService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.authSrv.signedOn(this.sender)
+  }
 
   onSend() {
     this.message = {
