@@ -5,7 +5,8 @@ import { Observable } from 'rxjs'
 
 @Injectable()
 export class MessageService {
-	private basePath: string = '/dialog/messages'
+
+	private messagePath: string = '/dialog/messages'
 
 	messagesObservable: Observable<{}[]>
 	messages: AngularFireList<Message> = null
@@ -14,12 +15,12 @@ export class MessageService {
 	constructor(private db: AngularFireDatabase) { }
 
 	getMessageList(): Observable<{}[]> {
-		this.messagesObservable = this.db.list(this.basePath).valueChanges()
+		this.messagesObservable = this.db.list(this.messagePath).valueChanges()
 		return this.messagesObservable
 	}
 
 	// getMessage(key: string): AngularFireObject<Message> {
-	// 	const messagePath = `${this.basePath}/${key}`
+	// 	const messagePath = `${this.basePath}/${key}`a
 	// 	this.message = this.db.object(messagePath)
 	// 	return this.message
 	// }
@@ -28,5 +29,7 @@ export class MessageService {
 		return this.db.list(this.basePath).push(message)
 			// .catch(error => this.handleError(error))
 	}
+
+
 	
 }
