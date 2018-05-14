@@ -1,0 +1,9 @@
+.side-nav {
+	display: inline-block;
+	width: 30%;
+}
+
+.main {
+	display: inline-block;
+	width: 70%;
+}

@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core'
 import { AngularFireList } from 'angularfire2/database'
 import { Message } from '../shared/message.model'
-import { MessageService } from '../shared/message.service'
 import { Observable } from 'rxjs'
+import { MessageService } from '../shared/message.service'
 
 @Component({
   selector: 'app-dialog-box',
