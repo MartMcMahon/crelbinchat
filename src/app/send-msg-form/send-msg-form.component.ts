@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core'
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core'
 import { AuthService } from '../shared/auth.service'
 import { MessageService } from '../shared/message.service'
 
@@ -9,8 +9,11 @@ import { MessageService } from '../shared/message.service'
 })
 export class SendMsgFormComponent implements OnInit {
 
-  sender: string = 'crelbin'
+  @Input() sender: string = 'crelbin'
   @Input() body: string = 'message'
+
+  @Output() nameChanged = new EventEmitter<{sender: string}>()
+
   message = {
     "sender": this.sender,
     "body": this.body,
@@ -32,7 +35,8 @@ export class SendMsgFormComponent implements OnInit {
     this.msgSrv.createMessage(this.message)
   }
 
-  onNameChange(e) {
+  // onNameChanged(e: {sender: string}) {
+  onNameChanged(e) {
     console.log('function firing')
     this.authSrv.updateName(this.sender)
   }

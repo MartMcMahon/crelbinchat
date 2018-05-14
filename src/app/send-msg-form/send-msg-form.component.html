@@ -4,9 +4,8 @@
       type="text" 
       class="form-control" 
       placeholder="{{sender}}" 
-      [(ngModel)]="sender"
-      //this event can get emitted, but it doesn't go here
-      (onNameChange)="onNameChange($event)" />
+      [(ngModel)]="sender" 
+      (keyup)="onNameChanged($event)" />
   </span>
   
   <textarea class="form-control" placeholder="{{body}}" 
