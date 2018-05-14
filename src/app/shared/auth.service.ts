@@ -46,17 +46,19 @@ export class AuthService {
       .do(changes => {
         changes.map(thing => {
 
-          console.log(thing)
+          // console.log(thing)
         })
       })
   }
 
   updateName(name: string) {
+    console.log(name)
     // this.usersObjRef = this.db.object(this.usersPath)
     const userRef = this.db.object(this.usersPath + this.userId)
     let obj = {}
     obj['sender'] = name
     obj['timestamp'] = new Date().toString()
+    console.log(obj)
     userRef.update(obj)
   }
 

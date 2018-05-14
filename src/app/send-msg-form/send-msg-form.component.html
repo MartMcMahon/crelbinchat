@@ -5,10 +5,14 @@
         type="text" 
         class="form-control" 
         placeholder="{{sender}}" 
+        name="sender"
         [(ngModel)]="sender" 
         (keyup)="onNameChanged($event)" />
-    </span>    
-    <textarea class="form-control" placeholder="{{body}}" 
+      </span>    
+      <textarea 
+      class="form-control" 
+      placeholder="{{body}}" 
+      name="body"
       [(ngModel)]="body" ></textarea>
     <div>
       <span style="width:75%; align: center">

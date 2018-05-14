@@ -12,7 +12,7 @@ export class SendMsgFormComponent implements OnInit {
   @Input() sender: string = 'crelbin'
   @Input() body: string = 'message'
 
-  // @Output() nameChanged = new EventEmitter<{sender: string}>()
+  @Output() nameChanged = new EventEmitter<{sender: string}>()
 
   message = {
     "sender": this.sender,
@@ -34,12 +34,12 @@ export class SendMsgFormComponent implements OnInit {
     }
     this.msgSrv.createMessage(this.message)
 
-    this.body = ''
+    // this.body = ''
   }
 
   // onNameChanged(e: {sender: string}) {
   onNameChanged(e) {
-    console.log('function firing')
+    console.log(e)
     this.authSrv.updateName(this.sender)
   }
   
