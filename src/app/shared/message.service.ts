@@ -26,7 +26,7 @@ export class MessageService {
 	// }
 
 	createMessage(message: Message) {
-		this.db.list(this.messagePath).push(message)
+		return this.db.list(this.basePath).push(message)
 			// .catch(error => this.handleError(error))
 	}
 
