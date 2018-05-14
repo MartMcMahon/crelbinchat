@@ -28,16 +28,6 @@ export class AuthService {
       // this.updateOnConnect()
       this.updateOnDisconnect()
     })
-
-  
-
-
-
-    // this.userRef = this.db.object(this.usersPath + this.userId)
-    // this.userRef.ref.onDisconnect().udpate({})
-
-    // let donuts = this.db.object(`DONUTS`)
-    // donuts.query.ref.onDisconnect().set(false)
   }
   
   /**
@@ -51,12 +41,14 @@ export class AuthService {
     this.userId = res.key
   }
 
-  // signOff(userId: string) {
-  //   return this.db.object(this.usersPath + userId).update({})
-  // }
-
   getUserList(): Observable<{}[]> {
     return this.usersListRef.valueChanges()
+      .do(changes => {
+        changes.map(thing => {
+
+          console.log(thing)
+        })
+      })
   }
 
   updateName(name: string) {
@@ -67,21 +59,6 @@ export class AuthService {
     obj['timestamp'] = new Date().toString()
     userRef.update(obj)
   }
-
-  // ngOnDestory() {
-  //   console.log('on Destroy')
-  //   this.db.object(this.usersPath + this.userId).update({'status': 'offline'})
-  //   // let offlineUser = {
-  //   //   'sender': this.sender
-  //   // }
-  //   // this.db.object(this.usersPath + this.userId).query.ref.onDisconnect().update({})
-  //   // offlineUser[]
-  //   // this.db.object(this.usersPath + this.userId).update({})
-  // }
-
-  // private updateOnConnect() {
-  //   return this.db.object('.info/connected').valueChanges()
-  // }
 
   private updateOnDisconnect() {
     console.log('updateondisconnect')

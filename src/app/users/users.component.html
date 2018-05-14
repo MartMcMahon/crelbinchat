@@ -1,5 +1,5 @@
 <div class="users-box">
   <ul>
-    <li *ngFor="let user of usersObservable | async">{{ user }}
+    <li *ngFor="let user of usersObservable | async">{{ user['sender'] }}
   </ul>
 </div>
