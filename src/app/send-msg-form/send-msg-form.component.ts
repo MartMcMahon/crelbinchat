@@ -17,7 +17,7 @@ export class SendMsgFormComponent implements OnInit {
   message = {
     "sender": this.sender,
     "body": this.body,
-    "timeStamp": new Date()
+    "timeStamp": Date.now()
   }
 
   constructor(private authSrv: AuthService, private msgSrv: MessageService) { }
@@ -30,7 +30,7 @@ export class SendMsgFormComponent implements OnInit {
     this.message = {
       "sender": this.sender,
       "body": this.body,
-      "timeStamp": new Date()
+      "timeStamp": Date.now()
     }
     this.msgSrv.createMessage(this.message)
     .then(() => {

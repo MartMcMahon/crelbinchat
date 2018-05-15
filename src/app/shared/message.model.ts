@@ -2,5 +2,5 @@ export class Message {
 	// $key: string
 	sender: string
 	body: string
-	timeStamp: string
+	timeStamp: number
 }
