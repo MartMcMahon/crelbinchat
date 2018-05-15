@@ -36,7 +36,7 @@ export class AuthService {
   signedOn(sender: string) {
     let res = this.usersListRef.push({
       'sender': sender, 
-      'timestamp': new Date().toString()
+      'timestamp': Date.now()
     })
     this.userId = res.key
   }
