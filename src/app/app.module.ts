@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
+import { CoreModule } from './core/core.module'
 
 //firebase imports
 import { AngularFireModule } from 'angularfire2'
@@ -21,7 +22,9 @@ import { DialogBoxComponent } from './dialog-box/dialog-box.component'
 import { SendMsgFormComponent } from './send-msg-form/send-msg-form.component'
 import { MessageService } from './shared/message.service'
 import { AuthService } from './shared/auth.service';
-import { UsersComponent } from './users/users.component'
+import { UsersComponent } from './users/users.component';
+import { UserInfoComponent } from './user-info/user-info.component';
+import { UserLoginComponent } from './users/user-login/user-login.component'
 
 @NgModule({
   declarations: [
@@ -29,7 +32,9 @@ import { UsersComponent } from './users/users.component'
     NavbarComponent,
     DialogBoxComponent,
     SendMsgFormComponent,
-    UsersComponent
+    UsersComponent,
+    UserInfoComponent,
+    UserLoginComponent
   ],
   imports: [
     BrowserModule,
