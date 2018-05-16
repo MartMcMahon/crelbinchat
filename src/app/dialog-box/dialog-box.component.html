@@ -1,7 +1,6 @@
 <div class="dialog-box">
   <ul>
     <div *ngFor="let msg of messagesObservable | async">
-      <span>{{ msg['timeStamp'] }}</span>
       <span>{{ msg['sender'] }}: </span>
       <span>{{ msg['body'] }}</span>
     </div>
