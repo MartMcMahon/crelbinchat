@@ -24,13 +24,18 @@ export class LitAuthService {
     this.authInfo = this.afAuth.authState
   }
 
-  login(sender: string) {
-    //sign in with google
-    // this.afAuStringFormatuth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
-
-    //sign in anonymously
-    this.afAuth.auth.signInAnonymously()
-      .then(authInfo => {
+  login(provider) {
+    let prom
+    switch(provider) {
+      case 'google':
+        prom = this.loginWithGoogle()
+        break
+      case 'anon':
+        prom = this.loginAnon()
+        break
+    }
+    
+    prom.then(authInfo => {
         console.log('signed in anonymously')
         this.user = this.db.object(usersPath + authInfo.user.uid)
       })
@@ -51,9 +56,15 @@ export class LitAuthService {
       })
       .catch(err => {
         console.log(err)
-      })
+      })    
+  }
 
-    
+  loginAnon() {
+    return this.afAuth.auth.signInAnonymously()
+  }
+
+  loginWithGoogle() {
+    return this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
   }
 
   logout() {

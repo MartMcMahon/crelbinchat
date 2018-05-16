@@ -25,7 +25,7 @@ export class SendMsgFormComponent implements OnInit {
 
   ngOnInit() {
     // this.authSrv.signedOn(this.sender)
-    this.litSrv.login(this.sender)
+    // this.litSrv.login()
   }
 
   onSend() {

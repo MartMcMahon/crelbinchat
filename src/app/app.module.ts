@@ -12,6 +12,7 @@ import { AngularFireDatabaseModule, AngularFireList, AngularFireObject } from 'a
 //material imports
 import { MatButtonModule } from '@angular/material'
 import { MatInputModule } from '@angular/material/input'
+import { MatListModule } from '@angular/material/list'
 
 //app imports
 import { environment } from '../environments/environment'
@@ -43,7 +44,8 @@ import { LitAuthService } from './shared/litauth.service'
     FormsModule,
     NgbModule.forRoot(),
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
+    MatListModule
   ],
   providers: [
     MessageService,
