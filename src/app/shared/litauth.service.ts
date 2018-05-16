@@ -38,12 +38,15 @@ export class LitAuthService {
         //does user exist?
         if (this.user) {
           //set name to this.user.sender
+          let sender = this.user.query.sender
+          console.log(sender)
 
           //set other user stats
         }
         else {
           console.log('hello, new crelbin')
           this.updateName('crelbin')
+          return
         }
       })
       .catch(err => {
