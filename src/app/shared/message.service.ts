@@ -29,7 +29,5 @@ export class MessageService {
 		return this.db.list(this.messagePath).push(message)
 			// .catch(error => this.handleError(error))
 	}
-
-
 	
 }

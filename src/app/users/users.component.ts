@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { AngularFireList } from 'angularfire2/database'
 import { Observable } from 'rxjs'
-import { AuthService } from '../shared/auth.service'
-
+import { LitAuthService } from '../shared/litauth.service'
 
 @Component({
   selector: 'app-users',
@@ -13,9 +12,9 @@ export class UsersComponent implements OnInit {
   
   usersObservable: Observable<{}[]>
 
-  constructor(private authSrv: AuthService) { }
+  constructor(private litSrv: LitAuthService) { }
 
   ngOnInit() {
-    this.usersObservable = this.authSrv.getUserList()
+    this.usersObservable = this.litSrv.getUserList()
   }
 }

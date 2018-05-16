@@ -20,8 +20,10 @@ import { NavbarComponent } from './navbar/navbar.component'
 import { DialogBoxComponent } from './dialog-box/dialog-box.component'
 import { SendMsgFormComponent } from './send-msg-form/send-msg-form.component'
 import { MessageService } from './shared/message.service'
-import { AuthService } from './shared/auth.service';
 import { UsersComponent } from './users/users.component'
+import { LoginComponent } from './users/login/login.component'
+import { appRouting } from './app-routing.module'
+import { LitAuthService } from './shared/litauth.service'
 
 @NgModule({
   declarations: [
@@ -29,9 +31,11 @@ import { UsersComponent } from './users/users.component'
     NavbarComponent,
     DialogBoxComponent,
     SendMsgFormComponent,
-    UsersComponent
+    UsersComponent,
+    LoginComponent
   ],
   imports: [
+    appRouting,
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
@@ -42,8 +46,8 @@ import { UsersComponent } from './users/users.component'
     MatInputModule
   ],
   providers: [
-    AuthService, 
-    MessageService
+    MessageService,
+    LitAuthService
   ],
   bootstrap: [AppComponent]
 })
