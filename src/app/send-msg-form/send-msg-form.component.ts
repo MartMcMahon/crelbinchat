@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core'
 import { AuthService } from '../shared/auth.service'
+import { LitAuthService } from '../shared/litauth.service'
 import { MessageService } from '../shared/message.service'
 
 @Component({
@@ -20,17 +21,20 @@ export class SendMsgFormComponent implements OnInit {
     "timeStamp": new Date()
   }
 
-  constructor(private authSrv: AuthService, private msgSrv: MessageService) { }
+  constructor(private authSrv: AuthService, 
+              private litSrv: LitAuthService,
+              private msgSrv: MessageService) { }
 
   ngOnInit() {
-    this.authSrv.signedOn(this.sender)
+    // this.authSrv.signedOn(this.sender)
+    this.litSrv.login(this.sender)
   }
 
   onSend() {
     this.message = {
       "sender": this.sender,
       "body": this.body,
-      "timeStamp": new Date()
+      "timeStamp": Date.now()
     }
     this.msgSrv.createMessage(this.message)
     .then(() => {
@@ -40,8 +44,8 @@ export class SendMsgFormComponent implements OnInit {
 
   // onNameChanged(e: {sender: string}) {
   onNameChanged(e) {
-    console.log(e)
-    this.authSrv.updateName(this.sender)
+    // this.authSrv.updateName(this.sender)
+    this.litSrv.updateName(this.sender)
   }
   
 }

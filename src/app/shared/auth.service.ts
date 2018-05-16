@@ -67,7 +67,7 @@ export class AuthService {
     let res = this.usersListRef.push({
       'sender': sender, 
       'timestamp': Date.now(),
-      'status': 'online'
+      'status': 'online',
     })
     this.userId = res.key
     // res.onDisconnect()
@@ -75,18 +75,18 @@ export class AuthService {
 
   getUserList(): Observable<{}[]> {
     return this.usersListRef.valueChanges()
-      .do(changes => {
-        changes.map(user => {
-          if (user.timestamp < Date.now() - 30000) { //userTimeout) {
-            // bloc.push(user.key)
-            // console.log(user)
-            // console.log(user.key)
-          }
+      // .do(changes => {
+      //   changes.map(user => {
+      //     if (user.timestamp < Date.now() - 30000) { //userTimeout) {
+      //       // bloc.push(user.key)
+      //       // console.log(user)
+      //       // console.log(user.key)
+      //     }
           
 
           // console.log(thing)
-        })
-      })
+        // })
+      // })
   }
 
   updateName(name: string) {
@@ -121,7 +121,4 @@ export class AuthService {
     return this.authenticated ? this.authState.auth : null
   }
 
-  private signIn(provider: number): firebase.Promise<FirebaseAuthState> {
-    
-  }
 }

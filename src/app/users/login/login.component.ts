@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import { LitAuthService } from '../../shared/litauth.service'
 
 @Component({
   selector: 'app-login',
@@ -7,17 +8,17 @@ import { Component, OnInit } from '@angular/core'
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private auth: LitAuthService) { }
 
   ngOnInit() {
   }
 
-  login() { 
-    console.log('login')
-   }
-
+  login(sender: string) { 
+    this.auth.login(sender)
+  }
+  
   logout() { 
-    console.log('logout')
+    this.auth.logout()
    }
 
 }

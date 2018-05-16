@@ -23,6 +23,8 @@ import { MessageService } from './shared/message.service'
 import { AuthService } from './shared/auth.service'
 import { UsersComponent } from './users/users.component'
 import { LoginComponent } from './users/login/login.component'
+import { appRouting } from './app-routing.module'
+import { LitAuthService } from './shared/litauth.service'
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import { LoginComponent } from './users/login/login.component'
     LoginComponent
   ],
   imports: [
+    appRouting,
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
@@ -45,7 +48,8 @@ import { LoginComponent } from './users/login/login.component'
   ],
   providers: [
     AuthService, 
-    MessageService
+    MessageService,
+    LitAuthService
   ],
   bootstrap: [AppComponent]
 })
