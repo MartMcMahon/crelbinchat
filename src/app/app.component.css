@@ -3,6 +3,10 @@
 	width: 30%;
 }
 
+.side-nav-component {
+	display: block;
+}
+
 .main {
 	display: inline-block;
 	width: 70%;

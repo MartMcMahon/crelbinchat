@@ -1,0 +1,10 @@
+
+<button 
+	class="login" 
+	(click)="login()"
+	*ngIf="!(user | async)?.uid"
+	>login</button>
+	<button 
+	class="logout" 
+	(click)="logout()"
+>logout</button>
