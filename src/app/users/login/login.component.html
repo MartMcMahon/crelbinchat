@@ -1,10 +1,10 @@
-
 <button 
+	mat-raised-button
 	class="login" 
-	(click)="login()"
-	*ngIf="!(user | async)?.uid"
-	>login</button>
+	(click)="loginButton()"
+	>login with google</button>
 	<button 
+	mat-raised-button
 	class="logout" 
 	(click)="logout()"
 >logout</button>

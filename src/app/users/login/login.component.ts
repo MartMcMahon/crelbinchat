@@ -11,10 +11,15 @@ export class LoginComponent implements OnInit {
   constructor(private auth: LitAuthService) { }
 
   ngOnInit() {
+    this.auth.login('anon')
   }
 
   login(sender: string) { 
     this.auth.login(sender)
+  }
+
+  loginButton() {
+    this.auth.login('google')
   }
   
   logout() { 
