@@ -16,7 +16,7 @@ import { MatListModule } from '@angular/material/list'
 
 //app imports
 import { environment } from '../environments/environment'
-import { AppComponent } from './app.component';
+import { AppComponent } from './app.component'
 import { NavbarComponent } from './navbar/navbar.component'
 import { DialogBoxComponent } from './dialog-box/dialog-box.component'
 import { SendMsgFormComponent } from './send-msg-form/send-msg-form.component'
