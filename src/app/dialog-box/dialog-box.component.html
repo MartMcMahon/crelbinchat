@@ -1,4 +1,5 @@
-<div class="dialog-box">
+<div class="dialog-box"
+  #scrollable [scrollTop]="scrollable.scrollHeight">
   <ul>
     <div *ngFor="let msg of messagesObservable | async">
       <span>{{ msg['sender'] }}: </span>
