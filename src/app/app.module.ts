@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
+import { ServiceWorkerModule } from '@angular/service-worker'
 
 //firebase imports
 import { AngularFireModule } from 'angularfire2'
@@ -45,7 +46,8 @@ import { LitAuthService } from './shared/litauth.service'
     NgbModule.forRoot(),
     MatButtonModule,
     MatInputModule,
-    MatListModule
+    MatListModule,
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     MessageService,
